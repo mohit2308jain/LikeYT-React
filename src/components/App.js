@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Spinner } from 'reactstrap';
 import '../index.css';
 
 import { fetchVideosWithDetail, selectVideo } from '../redux/ActionCreaters';
@@ -46,7 +47,12 @@ class App extends React.Component{
         let showData;
 
         if(isLoading){
-            showData = <div className="col-12 text-center"><h1>Loading...</h1></div>
+            showData = (
+                <div className="col-12 text-center">
+                    <Spinner style={{ width: '5rem', height: '5rem' }} color="primary"/>
+                    <hr />
+                    <h1>Loading...</h1>
+                </div>)
         }
         else if(errMess){
             showData = <div className="col-12 text-center"><h1>{errMess}</h1></div>
