@@ -45,7 +45,8 @@ const fetchVideos = (term) => {
 }
 
 const videosLoading = (term) => ({
-    type: VIDEOS_LOADING
+    type: VIDEOS_LOADING,
+    payload: term
 });
 
 const videosFailed = (errmess) => ({

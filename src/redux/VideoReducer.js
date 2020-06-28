@@ -3,6 +3,7 @@ import { FETCH_VIDEOS, SELECT_VIDEO, VIDEOS_FAILED, VIDEOS_LOADING } from './Act
 export const videoReducer = (state = {
         isLoading: true,
         errMess: null,
+        searchTerm: null,
         videos: [],
         selectedVideo: null
         }, action) => {
@@ -10,7 +11,7 @@ export const videoReducer = (state = {
             case FETCH_VIDEOS:
                 return {...state, isLoading: false, errMess: null, videos: action.payload};
             case VIDEOS_LOADING:
-                return {...state, isLoading: true, errMess: null, videos: [], selectedVideo: null};
+                return {...state, isLoading: true, errMess: null, searchTerm:action.payload, videos: [], selectedVideo: null};
             case SELECT_VIDEO:
                 return {...state, isLoading: false, errMess: null, selectedVideo: action.payload};
             case VIDEOS_FAILED:

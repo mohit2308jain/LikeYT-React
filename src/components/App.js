@@ -41,7 +41,7 @@ class App extends React.Component{
     }
 
     render(){
-        const { isLoading, errMess, videos, selectedVideo } = this.props.videolist;
+        const { isLoading, errMess, searchTerm, videos, selectedVideo } = this.props.videolist;
         console.log(this.props.videolist);
 
         let showData;
@@ -59,15 +59,20 @@ class App extends React.Component{
         }
         else if(videos){
             showData = (
-                <div className="row">
-                    <div className="col-12 col-lg-8">
-                        <VideoDetail video={selectedVideo} />
-                    </div>
-                    <div className="col-12 col-lg-4">
-                        <VideoList 
-                            onVideoSelect = {this.onVideoSelect} 
-                            videos={videos} 
-                        />
+                <div>
+                    <h4 style={{textDecoration: 'underline', textAlign: 'center'}}>
+                        Results for: {searchTerm}
+                    </h4>
+                    <div className="row">
+                        <div className="col-12 col-lg-8">
+                            <VideoDetail video={selectedVideo} />
+                        </div>
+                        <div className="col-12 col-lg-4">
+                            <VideoList 
+                                onVideoSelect = {this.onVideoSelect} 
+                                videos={videos} 
+                            />
+                        </div>
                     </div>
                 </div>
             )
@@ -79,9 +84,7 @@ class App extends React.Component{
                     <SearchBar onInput={this.onTermSubmit}/>
                 </div>
                 <hr className="border-bottom border-white"/>
-                
                     {showData}
-                
             </div>
         );
     }
