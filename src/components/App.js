@@ -28,7 +28,7 @@ const mapDispatchToProps = (dispatch) => {
 class App extends React.Component{
 
     componentDidMount() {
-        this.onTermSubmit('Book');
+        this.onTermSubmit('news');
     }
 
     onTermSubmit = async (term) => {

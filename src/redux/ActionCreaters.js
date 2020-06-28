@@ -2,7 +2,7 @@ import { FETCH_VIDEOS, SELECT_VIDEO, VIDEOS_FAILED, VIDEOS_LOADING } from './Act
 import youtube, { baseParams } from '../apis/youtube';
 
 const API_KEY_ERROR = 'Error with API KEY';
-const searchTermEmpty = 'PLEASE ENTER SEARCH TERM';
+const searchTermEmpty = 'Please Enter Search Term..';
 
 export const fetchVideosWithDetail = (term) => {
     return async (dispatch) => {
