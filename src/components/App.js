@@ -60,9 +60,9 @@ class App extends React.Component{
         else if(videos){
             showData = (
                 <div>
-                    <h4 style={{textDecoration: 'underline', textAlign: 'center'}}>
-                        Results for: {searchTerm}
-                    </h4>
+                    <h3 style={{textDecoration: 'underline', textAlign: 'center'}}>
+                        Results for {searchTerm}
+                    </h3>
                     <div className="row">
                         <div className="col-12 col-lg-8">
                             <VideoDetail video={selectedVideo} />
