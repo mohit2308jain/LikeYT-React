@@ -23,7 +23,6 @@ export const selectVideo = (video) => ({
 });
 
 const fetchVideos = (term) => {
-    console.log(term);
     return async (dispatch) => {
         try{
             const response = await youtube.get('/search', {

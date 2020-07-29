@@ -32,7 +32,6 @@ class App extends React.Component{
     }
 
     onTermSubmit = async (term) => {
-        console.log(term);
         this.props.fetchVideos(term);
     };
     
@@ -42,7 +41,6 @@ class App extends React.Component{
 
     render(){
         const { isLoading, errMess, searchTerm, videos, selectedVideo } = this.props.videolist;
-        console.log(this.props.videolist);
 
         let showData;
 

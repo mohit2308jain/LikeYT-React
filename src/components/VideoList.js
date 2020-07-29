@@ -1,21 +1,17 @@
 import React from 'react';
 import VideoItem from './VideoItem';
 
-class VideoList extends React.Component {
-    
-    render(){ 
-        const {videos, onVideoSelect} = this.props;
+const VideoList = ({ videos, onVideoSelect }) => {
 
-        const renderedList = videos.map((video) => {
-            return (<div className="my-3">
-                    <VideoItem key={video.id.videoId} onVideoSelect={onVideoSelect} video={video}/>
-                </div>);
-        }); 
+    const renderedList = videos.map((video) => {
+        return (<div className="my-3" key={video.id.videoId}>
+                <VideoItem onVideoSelect={onVideoSelect} video={video}/>
+            </div>);
+    }); 
 
-        return(
-            <div className="col-12">{renderedList}</div>
-        );
-    }
+    return(
+        <div className="col-12">{renderedList}</div>
+    );
 }
 
 export default VideoList;
